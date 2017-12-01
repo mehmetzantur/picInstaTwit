@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://Serve/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="InstaTwit" targetNamespace="http://Serve/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/InstaTwitService/InstaTwit?xsd=1" namespace="http://Serve/" />
+    </xsd:schema>
+  </types>
+  <message name="picTwit">
+    <part name="parameters" element="tns:picTwit" />
+  </message>
+  <message name="picTwitResponse">
+    <part name="parameters" element="tns:picTwitResponse" />
+  </message>
+  <message name="picInsta">
+    <part name="parameters" element="tns:picInsta" />
+  </message>
+  <message name="picInstaResponse">
+    <part name="parameters" element="tns:picInstaResponse" />
+  </message>
+  <portType name="InstaTwit">
+    <operation name="picTwit">
+      <input wsam:Action="http://Serve/InstaTwit/picTwitRequest" message="tns:picTwit" />
+      <output wsam:Action="http://Serve/InstaTwit/picTwitResponse" message="tns:picTwitResponse" />
+    </operation>
+    <operation name="picInsta">
+      <input wsam:Action="http://Serve/InstaTwit/picInstaRequest" message="tns:picInsta" />
+      <output wsam:Action="http://Serve/InstaTwit/picInstaResponse" message="tns:picInstaResponse" />
+    </operation>
+  </portType>
+  <binding name="InstaTwitPortBinding" type="tns:InstaTwit">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="picTwit">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="picInsta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="InstaTwit">
+    <port name="InstaTwitPort" binding="tns:InstaTwitPortBinding">
+      <soap:address location="http://localhost:8080/InstaTwitService/InstaTwit" />
+    </port>
+  </service>
+</definitions>
