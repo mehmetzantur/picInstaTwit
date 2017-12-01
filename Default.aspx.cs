@@ -11,12 +11,7 @@ namespace InstaTwitClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //content.InnerHtml = "dasdsadasdas";
-            InstaTwitWS.InstaTwit servis = new InstaTwitWS.InstaTwit();
-            //string donenDeger = servis.hello("mehmet");
-            //content.InnerHtml = donenDeger.ToString();
-
-
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
